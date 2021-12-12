@@ -72,8 +72,10 @@ window.addEventListener('DOMContentLoaded', event => {
     <h5 class="card-title">${val.projectName}</h5>
     <p class="card-text">${val.description}</p>
     <p class="card-text">Technologies: ${val.technologies}</p>
-    <a style="height:20px" class="d-flex justify-content-center" href="${val.githubLink}"> <img style="width: 5%" src="assets/github.svg" alt=""></a>
-  </div>
+   <div style="margin-top: 5px;" class="d-flex justify-content-around"><a style="height:20px"  href="${val.githubLink}"> <i style="font-size:24px; color:black;" class="fab fa-github"></i></a>
+    <a style="height:20px"  href="${val.link}"> <i style="color: black; font-size:20px"; class="fas fa-globe"></i></a>
+    </div> 
+    </div>
 </div> 
         </div>
         `

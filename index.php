@@ -1,3 +1,27 @@
+<?php 
+
+if(isset($_POST['submit'])){
+    $to = "k.patrick96@gmail.com"; // this is your Email address
+    $from = $_POST['email']; // this is the sender's Email address
+    $first_name = $_POST['first_name'];
+    $first_name = $_POST['last_name'];
+    $subject = "Form submission";
+    $subject2 = "Copy of your form submission";
+    $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['message'];
+    $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
+
+    $headers = "From:" . $from;
+    $headers2 = "From:" . $to;
+    mail($to,$subject,$message,$headers);
+    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+    echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
+    // You can also use header('Location: thank_you.php'); to redirect to another page.
+    }
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -128,24 +152,26 @@
                         <div class="row">
                             <div class="col col-12 col-sm-12 col-md-6 col-lg-6 p-4">
                                 <h5 class="mb-4">Front-End</h5>
-
+                            <div class="ms-2">
                                 <p><i class="fab fa-html5"></i> HTML5</p>
                                 <p><i class="fab fa-css3-alt"></i> CSS3</p>
                                 <p><i class="fab fa-js-square"></i> JavaScript</p>
                                 <p><i class="fab fa-bootstrap"></i> Bootstrap 5</p>
                                 <p><i class="fab fa-sass"></i> Sass/Scss</p>
                                 <p><i class="fab fa-angular"></i> Angular</p>
-
+                                <p><i class="fab fa-vuejs"></i> VueJS</p>
+                                </div>
                             </div>
                             <div class="col col-12 col-sm-12 col-md-6 col-lg-6 p-4 ">
                                 <h5 class="mb-4">Back-End</h5>
-
+                                <div class="ms-2">
                                 <p> <i class="fas fa-database"></i> MySql</p>
                                 <p><i class="fab fa-php"></i> PHP</p>
                                 <p><i class="fab fa-symfony"></i> Symfony</p>
+                                <p><i class="fab fa-laravel"></i> Laravel</p>
                                 <p><img style="width: 7%;" src="assets/img/portfolio/ajax.png" alt=""> AJAX</p>
 
-
+                                </div>
 
                             </div>
                         </div>
@@ -185,25 +211,31 @@
                 <div class="col-lg-8 col-xl-7">
 
                     <!-- to get an API token!-->
-                    <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                    <form  action="" method="POST">
                         <!-- Name input-->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="name" type="text" placeholder="Enter your name..."
+                            <input  name="first_name" class="form-control" id="fname" type="text" placeholder="Enter your name..."
                                 data-sb-validations="required" />
-                            <label for="name">Full name</label>
+                            <label for="fname">First Name</label>
+                            <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input  name="last_name" class="form-control" id="lname" type="text" placeholder="Enter your name..."
+                                data-sb-validations="required" />
+                            <label for="lname">Last Name</label>
                             <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                         </div>
                         <!-- Email address input-->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="email" type="email" placeholder="name@example.com"
-                                data-sb-validations="required,email" />
+                            <input name="email" class="form-control" id="email" type="email" placeholder="name@example.com"
+                                data-sb-validations="required" />
                             <label for="email">Email address</label>
                             <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
                             <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
                         </div>
                         <!-- Phone number input-->
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890"
+                            <input name="phone" class="form-control" id="phone" type="tel" placeholder="(123) 456-7890"
                                 data-sb-validations="required" />
                             <label for="phone">Phone number</label>
                             <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.
@@ -211,7 +243,7 @@
                         </div>
                         <!-- Message input-->
                         <div class="form-floating mb-3">
-                            <textarea class="form-control" id="message" type="text"
+                            <textarea name="message" class="form-control" id="message" type="text"
                                 placeholder="Enter your message here..." style="height: 10rem"
                                 data-sb-validations="required"></textarea>
                             <label for="message">Message</label>
@@ -231,7 +263,7 @@
                             <div class="text-center text-danger mb-3">Error sending message!</div>
                         </div>
                         <!-- Submit Button-->
-                        <button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Send</button>
+                        <input type="submit" name="submit" value="Submit" class="btn btn-primary btn-xl"></input>
                     </form>
                 </div>
             </div>
@@ -251,14 +283,11 @@
                 <!-- Footer Social Icons-->
                 <div class="col col-12 col-sm-12 col-md-6 col-lg-6">
                     <h4 class="text-uppercase mb-4">Around the Web</h4>
-                    <a class="btn btn-outline-light btn-social mx-1"
-                        href="https://en-gb.facebook.com/patrick.kereszturi"><i class="fab fa-fw fa-facebook-f"></i></a>
                     <a class="btn btn-outline-light btn-social mx-1" href="https://github.com/kpatrick05"><i
                             class="fab fa-fw fa-github"></i></a>
-                    <a class="btn btn-outline-light btn-social mx-1" href="#!"><i
+                    <a class="btn btn-outline-light btn-social mx-1" href="https://www.linkedin.com/in/patrik-kereszturi-799aa021a/"><i
                             class="fab fa-fw fa-linkedin-in"></i></a>
-                    <a class="btn btn-outline-light btn-social mx-1" href="https://www.instagram.com/k.patrick05/"><i
-                            class="fab fa-fw fa-instagram"></i></a>
+                    
                 </div>
                 <!-- Footer About Text-->
 

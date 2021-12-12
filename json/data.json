@@ -1,54 +1,36 @@
 let projects = `
-  [
+  [ {
+    "projectName" : "Game Video Database",
+    "technologies": "HTML, SCSS, Angular",
+    "description" : "The main focus of this project was to connect Angular project with API",
+    "img" : "assets/img/gvdb.jpg",
+    "githubLink" : "https://github.com/kpatrick05/GameVideoDatabase",
+    "link" : "/gvdb/"
+},
+   
     {
-      "projectName" : "Team Project",
-      "technologies": "HTML, CSS3, JavaScript, TypeScript, Bootstrap 5,  Angular",
-      "description" : "We worked on a project in a team of four. I have created the template and then we have design and added more content to it. We have been used Color Schemes, Kanban Task manager and have finished in 3 days",
-      "img" : "assets/img/frontend.png",
-      "githubLink" : "https://github.com/minazn/FE21-FrontendProject"
+      "projectName" : "Pet Adoption CR 11",
+      "technologies": "HTML, CSS3, JavaScript, Bootstrap 5,  PHP",
+      "description" : "The focus of this CR was to create a ped adoption page with crud and login/register system with clear PHP",
+      "img" : "assets/img/cr11.jpg",
+      "githubLink" : "https://github.com/kpatrick05/FE21-CR11-PatrickKereszturi",
+      "link" : "/cr11/index.php"
   },
     {
         "projectName" : "CodeReview 06",
         "technologies": "HTML, CSS3, JavaScript, TypeScript, Bootstrap 5,  Angular",
         "description" : "The focus of this Code Review was to create a travel page with interactive cart functionality by using the Angular ngFor feature.",
         "img" : "assets/img/cr06.png",
-        "githubLink" : "https://github.com/kpatrick05/FE21-CR06-Patrick-Kereszturi"
+        "githubLink" : "https://github.com/kpatrick05/FE21-CR06-Patrick-Kereszturi",
+        "link" : "/cr06/"
     },
     {
-      "projectName" : "CodeReview 05",
+      "projectName" : "CodeReview 04",
       "technologies": "HTML, CSS3, JavaScript, TypeScript, Bootstrap 5",
       "description" : "Code Review 05 was about creating a travel blog page that utilizes dynamic page generation and manipulation of the DOM by adding a sort feature.",
       "img" : "assets/img/cr05.png",
-      "githubLink" : "https://github.com/kpatrick05/FE21-CR05-Patrick-Kereszturi"
-  },
-  {
-    "projectName" : "CodeReview 04",
-    "technologies": "HTML, CSS3, JavaScript, SCSS,  Bootstrap 5",
-    "description" : "In this Code Review we focused on generating a page dynamically from a .json file and adding a like button with a sort function to sort the movies by number of likes.",
-    "img" : "assets/img/cr04.png",
-    "githubLink" : "https://github.com/kpatrick05/FE21-CR04-Patrick-Kereszturi"
-},
-{
-  "projectName" : "CodeReview 03",
-  "technologies": "HTML, CSS3, JavaScript, SCSS,  Bootstrap 5",
-  "description" : "This Code Review was about applying our knowledge of Bootstrap, Scss and to just create the first JavaScript calculations and to get familiar with the console.",
-  "img" : "assets/img/cr03.png",
-  "githubLink" : "https://github.com/kpatrick05/FE21_CR03-Patrick-Kereszturi"
-}
-,
-{
-  "projectName" : "CodeReview 02",
-  "technologies": "HTML, CSS3, SCSS",
-  "description" : "In this Code Review I created a news blog and the focus was to get familiar with dynamic pages and video integration by using Sass/Scss and HTML.",
-  "img" : "assets/img/cr02.png",
-  "githubLink" : "https://github.com/kpatrick05/FE21-CR02-Patrick-Kereszturi"
-},
-{
-  "projectName" : "CodeReview 01",
-  "technologies": "HTML, CSS3",
-  "description" : "In this Code Review I have created a basic website with it's own respinsiveness,this was my first CR",
-  "img" : "assets/img/cr01.png",
-  "githubLink" : "https://github.com/kpatrick05/FE21-CR01-PatrickKereszturi"
-}
+      "githubLink" : "https://github.com/kpatrick05/FE21-CR05-Patrick-Kereszturi",
+      "link" : "/cr04/html/index.html"
+  }
 ] `
 
